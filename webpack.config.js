@@ -9,13 +9,13 @@ const webpackConfig = {
     entry: './src/index.tsx',
     devtool:"source-map",
 
-    // devServer: {
-    //   contentBase: path.resolve("./build/"),
-    //   port: port,
-    //   inline: true,
-    //   hot: true,
-    //   host: "localhost",
-    // },
+    devServer: {
+      // contentBase: path.resolve("./build/"),
+      port: port,
+      inline: true,
+      hot: true,
+      host: "localhost",
+    },
 
     plugins: [
       new HtmlWebpackPlugin({
