@@ -1,9 +1,14 @@
-import * as React from "react";
+import React from "react";
 import Main from "./pages/Main";
+import {globalStyles} from './common/globalStyles';
+import {Global} from '@emotion/react';
 
 function App(){
     return(
-        <Main />
+        <>
+            <Global styles={globalStyles} />
+            <Main />
+        </>
     )
 }
 
