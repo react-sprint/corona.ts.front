@@ -1,6 +1,6 @@
 import Map from "../components/map/Map";
 import Sidebar from "../components/sidebar/Sidebar";
-import * as React from "react";
+import React from "react";
 
 function Main(){
     return(
