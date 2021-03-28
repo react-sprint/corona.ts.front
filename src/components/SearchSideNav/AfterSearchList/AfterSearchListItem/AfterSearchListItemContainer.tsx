@@ -10,7 +10,6 @@ function AfterSearchListItemContainer() {
     <>
       <AfterSearchListItemPresentational 
         locationDetailVisible={locationDetailVisible}
-        setLocationDetailVisible={setLocationDetailVisible}
         handleOnLocationDetailClick={handleOnLocationDetailClick}
       />
     </>
