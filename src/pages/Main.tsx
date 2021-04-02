@@ -1,5 +1,4 @@
-import * as React from "react";
-// import React from "react";
+import React from "react";
 
 import Map from "../components/map/Map";
 import Sidebar from "../components/sidebar/Sidebar";
