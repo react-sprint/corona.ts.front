@@ -9,12 +9,12 @@ import useSearchDispatch from "../../util/hooks/useSearchDispatch";
 // 레이아웃을 잡는다.
 function SearchSideNav() {
 
-  const [dispatches, searchDispatch] = useSearchDispatch();
+  const [searchValue, searchDispatch] = useSearchDispatch();
 
   return (
     <SideNavLayout>
-      <SearchSideNavContainer onSearch={searchDispatch}/>
-      <AfterSearchListContainer />
+      <SearchSideNavContainer handleSearchDispatch={searchDispatch}/>
+      <AfterSearchListContainer searchValue={searchValue}/>
     </SideNavLayout>
   )
 }

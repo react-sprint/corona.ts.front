@@ -1,10 +1,10 @@
 import React from "react";
 import AfterSearchListItemContainer from "./AfterSearchListItem/AfterSearchListItemContainer";
 
-function AfterSearchListContainer() {
+function AfterSearchListContainer({searchValue}) {
   return (
     <>
-      <AfterSearchListItemContainer/>
+      <AfterSearchListItemContainer searchValue={searchValue}/>
     </>
   )
 }
