@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
 import styled from '@emotion/styled';
 import { Map_Key } from './config';
+
 declare global {
-    interface Window {
-      kakao: any;
-    }
+  interface Window {
+    kakao: any;
   }
+}
   
 function MapContainer(){
     useEffect(()=>{
         const script = document.createElement("script");
         script.async = true;
-        script.src =
-          `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${Map_Key}&autoload=false`;
+        script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${Map_Key}&autoload=false`;
         document.head.appendChild(script);
         script.onload = () => {
             window.kakao.maps.load(() => {
@@ -33,7 +33,7 @@ function MapContainer(){
     )
 }
 const MapContents = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 `;
 
