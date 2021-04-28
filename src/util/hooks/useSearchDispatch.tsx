@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from "react";
 
-function useSearchDispatch(): Array<any> {
-  const [dispatches, setDispatches] = useState([]);
+function useSearchDispatch(): Array<string|any> {
+  const [value, setDispatch] = useState<string>();
   
-  const handleDispatch = (dispatch: any) => {
-    setDispatches([...dispatches, dispatch]);
+  const handleDispatch = (searchValue: string) => {
+    setDispatch(searchValue);
+    console.log("useSearchDispatch", searchValue, value)
   }
 
-  return [dispatches, handleDispatch]
+  return [value, handleDispatch]
 }
 
 export default useSearchDispatch;

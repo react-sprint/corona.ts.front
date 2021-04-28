@@ -5,7 +5,7 @@ import RollingNoticeContainer from "./RollingNotice/RollingNoticeContainer";
 
 import { ISearchSideNavState } from "./interface";
 
-function SearchSideNavContainer({onSearch}) {
+function SearchSideNavContainer({ handleSearchDispatch }) {
   const [state, setState] = useState<ISearchSideNavState>({
     searchInput: null,
     rollingNotice: null
@@ -15,14 +15,17 @@ function SearchSideNavContainer({onSearch}) {
     // API CALL
   }
 
-  const handleOnChangeSearchInput = (value: string): void => {
-    setState({ ...state, searchInput: value });
+  // const handleOnChangeSearchInput = (value: string): void => {
+  //   setState({ ...state, searchInput: value });
+  // }
+  const handleSearch = (value: string) => {
+    console.log("handleSearch", value);
+    handleSearchDispatch(value);
   }
-
  
   return (
     <>
-      <SearchInputContainer handleOnSubmit={handleOnSubmit} handleOnChangeSearchInput={handleOnChangeSearchInput} onSearch={onSearch}/>
+      <SearchInputContainer handleSearch={handleSearch} />
       <RollingNoticeContainer />
     </>
   )

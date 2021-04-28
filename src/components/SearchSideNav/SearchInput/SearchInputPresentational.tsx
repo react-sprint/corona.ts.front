@@ -3,18 +3,18 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 interface ISearchInputPresentational {
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  handleChangeSearchInput: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 interface ISearchInputProp {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-function SearchInputPresentational({ handleChange } :ISearchInputPresentational) {
+function SearchInputPresentational({ handleChangeSearchInput } :ISearchInputPresentational) {
   return (
     <SearchBox>
       <SearchIcon> ICON </SearchIcon>
-      <SearchInput onChange={handleChange} />
+      <SearchInput onChange={handleChangeSearchInput} />
     </SearchBox>
   )
 }
