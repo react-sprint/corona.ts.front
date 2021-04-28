@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import AfterSearchListItemPresentational from "./AfterSearchListItemPresentational";
 
 function AfterSearchListItemContainer() {
-    const [locationDetailVisible,setLocationDetailVisible] = useState(false);
-    const handleOnLocationDetailClick = (): void => {
-        setLocationDetailVisible(!locationDetailVisible);
-    };
+  
   return (
     <>
-      <AfterSearchListItemPresentational 
-        locationDetailVisible={locationDetailVisible}
-        handleOnLocationDetailClick={handleOnLocationDetailClick}
-      />
+      {[...Array(5)].map((_ , idx) => { // for test 0414
+        return ( <AfterSearchListItemPresentational key={`searchListItem-${idx}`}
+          // locationDetailVisible={locationDetailVisible}
+          // handleOnLocationDetailClick={handleOnLocationDetailClick}
+        />)
+      })}
+      
     </>
   )
 }

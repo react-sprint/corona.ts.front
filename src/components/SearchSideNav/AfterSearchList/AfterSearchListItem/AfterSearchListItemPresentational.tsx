@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from '@emotion/styled';
 import { IAfterSearchListItemProps,locationDetailProps } from "./interface";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,9 +6,16 @@ import { faChevronDown, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons
 import { keyframes } from "@emotion/react";
 
 function AfterSearchListItemPresentational({
-    locationDetailVisible,
-    handleOnLocationDetailClick
+    // locationDetailVisible,
+    // handleOnLocationDetailClick
 }:IAfterSearchListItemProps) {
+
+  const [locationDetailVisible,setLocationDetailVisible] = useState(false);
+  
+  const handleOnLocationDetailClick = (): void => {
+      setLocationDetailVisible(!locationDetailVisible);
+  };
+
   return (
     <>
         <ItemWrapper>
@@ -108,6 +115,7 @@ const LocationDetailWrapper = styled.div`
     top:63%;
     border: 1px solid rgba(143,143,143,0.3);
     padding:5px 10px;
+    z-index:1;
     background-color: white;
 
     display:${({locationDetailVisible}:locationDetailProps)=> locationDetailVisible ? "flex" : "none" };

@@ -5,7 +5,7 @@ import RollingNoticeContainer from "./RollingNotice/RollingNoticeContainer";
 
 import { ISearchSideNavState } from "./interface";
 
-function SearchSideNavContainer() {
+function SearchSideNavContainer({onSearch}) {
   const [state, setState] = useState<ISearchSideNavState>({
     searchInput: null,
     rollingNotice: null
@@ -22,7 +22,7 @@ function SearchSideNavContainer() {
  
   return (
     <>
-      <SearchInputContainer handleOnSubmit={handleOnSubmit} handleOnChangeSearchInput={handleOnChangeSearchInput}/>
+      <SearchInputContainer handleOnSubmit={handleOnSubmit} handleOnChangeSearchInput={handleOnChangeSearchInput} onSearch={onSearch}/>
       <RollingNoticeContainer />
     </>
   )
